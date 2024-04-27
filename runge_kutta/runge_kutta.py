@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 def runge_kutta(f, x0, y0, h, n):
     """
     Solves a differential equation using the fourth-order Runge-Kutta method.
@@ -41,6 +43,14 @@ n = 100
 x, y = runge_kutta(f, x0, y0, h, n)
 
 # Printing the results
+print("Results of the Runge-Kutta method:")
 for i in range(len(x)):
-    print(f"x = {x[i]}, y = {y[i]}")
+    print(f"Step {i+1}: x = {x[i]}, y = {y[i]}")
 
+# Plotting the results
+plt.plot(x, y)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Solution of the Differential Equation using Runge-Kutta Method')
+plt.grid(True)
+plt.show()
